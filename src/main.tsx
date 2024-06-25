@@ -8,3 +8,13 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <App />
   </React.StrictMode>,
 )
+
+// Auto import
+// ES7 + React/Redux/React-Native snippets
+// Eslint
+// JSX HTML <tags/>
+// Path Intellisense
+// Prettier - Code formatter
+// Tailwind CSS Intellisense
+// Template String Converter
+// Typescript Importer
