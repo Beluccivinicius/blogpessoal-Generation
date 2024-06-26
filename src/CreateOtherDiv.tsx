@@ -9,11 +9,11 @@ function CreateOtherDiv() {
     }, [Count > 2])
 
     return(
-        <>
+        <div>
         <button onClick={() => {
             setCount(Count + 1)
         }}> {Count} </button>
-        </>
+        </div>
     )
 }
 
