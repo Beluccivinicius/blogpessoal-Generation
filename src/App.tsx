@@ -1,16 +1,21 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import Home from './Home'
+import Home from './pages/Home'
+import Login from './pages/Login'
 import CreateOtherDiv from './CreateOtherDiv'
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 
 function App() {
 
   return (
     <>
-      <Home name="Emanuelly" age={25} visuable={true} />
-      <Home name="zé" age={20} visuable={false} />
-      <CreateOtherDiv />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path="/login" element={<Login />}/>
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
