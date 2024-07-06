@@ -1,6 +1,8 @@
 import React from 'react';
 import homeLogo from '../../assets/home.png'
 import './Home.css';
+import ListaPostagens from '../../components/postagens/listaPostagem/ListaPostagens';
+import ModalPostagens from '../../components/postagens/modalPostagens/ModalPostagens';
 
 function Home() {
     return (
@@ -11,6 +13,11 @@ function Home() {
               <h2 className='text-5xl font-bold'>Seja bem vinde!</h2>
               <p className='text-xl'>Expresse aqui seus pensamentos e opniões</p>
   
+              <div className="flex justify-around gap-4">
+              <ModalPostagens />
+              <button className='rounded bg-white text-blue-800 py-2 px-4'>Ver postagens</button>
+            </div>
+
               <div className="flex justify-around gap-4">
               
                 <button className='rounded bg-white text-blue-800 py-2 px-4'>Ver postagens</button>
@@ -23,7 +30,7 @@ function Home() {
             </div>
           </div>
         </div>
-        
+        <ListaPostagens />
       </>
     );
 }

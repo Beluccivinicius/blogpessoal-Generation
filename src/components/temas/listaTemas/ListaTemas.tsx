@@ -17,19 +17,22 @@ function ListaTemas() {
 
   async function buscarTemas() {
     try {
-      let oi = await buscar('/temas', setTemas, {
+      await buscar('/temas', setTemas, {
         headers: { Authorization: token },
-      });
-
-      console.log(oi)
+        })
     } catch (error: any) {
       if (error.toString().includes('403')) {
         alert('O token expirou, favor logar novamente')
         handleLogout()
       }
+
+      if(error.toString().includes('timeout')){
+        alert("não temos temas")
+        navigate("/cadastroTema")
+      }
     }
   }
-
+  
   useEffect(() => {
     if (token === '') {
       alert('Você precisa estar logado');
@@ -38,9 +41,10 @@ function ListaTemas() {
   }, [token]);
 
   useEffect(() => {
-    buscarTemas();
-  }, [temas.length]);
+    buscarTemas()
 
+  }, [temas.length]);
+  
   return (
     <>
       {temas.length === 0 && (

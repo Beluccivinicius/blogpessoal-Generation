@@ -14,9 +14,9 @@ function DeletarTema() {
     const { usuario, handleLogout } = useContext(AuthContext)
     const token = usuario.token
 
-    async function buscarPorId(id: string) {
+    async function buscarPorId(id: string) { 
         try {
-            await buscar(`/temas/id/${id}`, setTema, {
+             await buscar(`/temas/id/${id}`, setTema, {
                 headers: {
                     'Authorization': token
                 }
@@ -27,8 +27,8 @@ function DeletarTema() {
                 handleLogout()
             }
         }
-    }
-
+        }
+        
     useEffect(() => {
         if (token === '') {
             alert('Você precisa estar logado')
