@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://blogpessoal-6tsz.onrender.com",
+    baseURL: import.meta.env.VITE_API_BLOG_PESSOAL,
     timeout: 5000
     // baseURL: "https://blogpessoalt74.onrender.com/"
 })
