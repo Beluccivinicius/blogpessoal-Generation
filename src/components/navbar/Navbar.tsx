@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
+import toastAlerts from '../../utils/toastAlerts'
 
 
 
@@ -11,7 +12,7 @@ function Navbar() {
 
   function logout() {
       handleLogout()
-      alert('Usuário deslogado com sucesso')
+      toastAlerts.sucesso('Usuário deslogado com sucesso')
       navigate('/login')
   }
 

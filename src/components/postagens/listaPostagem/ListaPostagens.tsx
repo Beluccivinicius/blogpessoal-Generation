@@ -5,6 +5,7 @@ import Postagem from '../../../models/Postagem'
 import { buscar } from '../../../services/Service'
 import { useNavigate } from 'react-router-dom'
 import { Dna } from 'react-loader-spinner'
+import toastAlerts from '../../../utils/toastAlerts'
 
 function ListaPostagens() {
   const [postagem, setPostagem] = useState<Postagem[]>([])
@@ -20,7 +21,7 @@ function ListaPostagens() {
       })
     } catch (error:any) {
       if (error.toString().includes('403')) {
-        alert('O token expirou, favor logar novamente')
+        toastAlerts.info('O token expirou, favor logar novamente')
         handleLogout()
     }
   }
@@ -30,7 +31,7 @@ function ListaPostagens() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      toastAlerts.info('Você precisa estar logado');
       navigate('/');
     }
   }, [token]);
